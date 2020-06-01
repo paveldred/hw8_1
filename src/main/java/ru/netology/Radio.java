@@ -4,7 +4,6 @@ public class Radio {
     private int currentStationNumber;
     private int maxStationNumber;
     private int minStationNumber;
-
     private int currentVolume;
     private int minVolume;
     private int maxVolume;
@@ -65,8 +64,6 @@ public class Radio {
         this.maxVolume = maxVolume;
     }
 
-
-
     public void nextStation() {
         if (currentStationNumber == maxStationNumber) {
             this.currentStationNumber = minStationNumber;
@@ -89,7 +86,6 @@ public class Radio {
         }
     }
 
-
     public void volumeUp() {
         if (currentVolume == maxVolume) {
             return;
@@ -109,8 +105,4 @@ public class Radio {
             this.currentVolume--;
         }
     }
-
-
-
-
 }

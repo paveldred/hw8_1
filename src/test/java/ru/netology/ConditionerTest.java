@@ -81,6 +81,4 @@ class ConditionerTest {
         conditioner.decreaseCurrentTemperature();
         assertEquals(14, conditioner.getCurrentTemperature());
     }
-
-
 }
