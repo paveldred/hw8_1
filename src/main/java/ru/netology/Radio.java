@@ -19,60 +19,14 @@ public class Radio {
         this.maxStationNumber = maxStationNumber;
     }
 
-    public int getCurrentStationNumber() {
-        return currentStationNumber;
-    }
-
     public void setCurrentStationNumber(int currentStationNumber) {
         if (currentStationNumber > maxStationNumber) {
             return;
         }
-
         if (currentStationNumber < minStationNumber) {
             return;
         }
-
         this.currentStationNumber = currentStationNumber;
-    }
-
-    public int getMaxStationNumber() {
-        return maxStationNumber;
-    }
-
-    public void setMaxStationNumber(int maxStationNumber) {
-        this.maxStationNumber = maxStationNumber;
-    }
-
-    public int getMinStationNumber() {
-        return minStationNumber;
-    }
-
-    public void setMinStationNumber(int minStationNumber) {
-        this.minStationNumber = minStationNumber;
-    }
-
-    public int getCurrentVolume() {
-        return currentVolume;
-    }
-
-    public void setCurrentVolume(int currentVolume) {
-        this.currentVolume = currentVolume;
-    }
-
-    public int getMinVolume() {
-        return minVolume;
-    }
-
-    public void setMinVolume(int minVolume) {
-        this.minVolume = minVolume;
-    }
-
-    public int getMaxVolume() {
-        return maxVolume;
-    }
-
-    public void setMaxVolume(int maxVolume) {
-        this.maxVolume = maxVolume;
     }
 
     public void nextStation() {
@@ -80,7 +34,6 @@ public class Radio {
             this.currentStationNumber = minStationNumber;
             return;
         }
-
         else {
             this.currentStationNumber++;
         }
@@ -91,7 +44,6 @@ public class Radio {
             this.currentStationNumber = maxStationNumber;
             return;
         }
-
         else {
             this.currentStationNumber--;
         }
@@ -101,7 +53,6 @@ public class Radio {
         if (currentVolume == maxVolume) {
             return;
         }
-
         else {
             this.currentVolume++;
         }
@@ -111,7 +62,6 @@ public class Radio {
         if (currentVolume == minVolume) {
             return;
         }
-
         else {
             this.currentVolume--;
         }
