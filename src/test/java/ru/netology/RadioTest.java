@@ -8,7 +8,6 @@ class RadioTest {
 
     Radio radio = new Radio(10);
 
-
     @Test
     void setCurrentStationNumberTest() {
         radio.setMinStationNumber(0);
