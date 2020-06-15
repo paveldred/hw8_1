@@ -34,9 +34,7 @@ public class Radio {
             this.currentStationNumber = minStationNumber;
             return;
         }
-        else {
-            this.currentStationNumber++;
-        }
+        this.currentStationNumber++;
     }
 
     public void prevStation() {
@@ -44,26 +42,22 @@ public class Radio {
             this.currentStationNumber = maxStationNumber;
             return;
         }
-        else {
-            this.currentStationNumber--;
-        }
+        this.currentStationNumber--;
     }
 
     public void volumeUp() {
         if (currentVolume == maxVolume) {
             return;
         }
-        else {
-            this.currentVolume++;
-        }
+        this.currentVolume++;
+
     }
 
     public void volumeDown() {
         if (currentVolume == minVolume) {
             return;
         }
-        else {
-            this.currentVolume--;
-        }
+        this.currentVolume--;
     }
 }
+
