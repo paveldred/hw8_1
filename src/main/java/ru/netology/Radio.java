@@ -1,67 +1,32 @@
 package ru.netology;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 public class Radio {
-    private int currentStationNumber;
-    private int maxStationNumber;
-    private int minStationNumber;
-    private int currentVolume;
-    private int minVolume;
-    private int maxVolume;
+    private int currentStationNumber = 5;
+    private int maxStationNumber = 10;
+    private int minStationNumber = 0;
+    private int currentVolume = 50;
+    private int minVolume = 0;
+    private int maxVolume = 100;
 
-    public int getCurrentStationNumber() {
-        return currentStationNumber;
-    }
-
-    public void setCurrentStationNumber(int currentStationNumber) {
-        if (currentStationNumber > 9) {
-            return;
-        }
-
-        if (currentStationNumber < 0) {
-            return;
-        }
-
-        this.currentStationNumber = currentStationNumber;
-    }
-
-    public int getMaxStationNumber() {
-        return maxStationNumber;
-    }
-
-    public void setMaxStationNumber(int maxStationNumber) {
+    public Radio(int maxStationNumber) {
         this.maxStationNumber = maxStationNumber;
     }
 
-    public int getMinStationNumber() {
-        return minStationNumber;
-    }
-
-    public void setMinStationNumber(int minStationNumber) {
-        this.minStationNumber = minStationNumber;
-    }
-
-    public int getCurrentVolume() {
-        return currentVolume;
-    }
-
-    public void setCurrentVolume(int currentVolume) {
-        this.currentVolume = currentVolume;
-    }
-
-    public int getMinVolume() {
-        return minVolume;
-    }
-
-    public void setMinVolume(int minVolume) {
-        this.minVolume = minVolume;
-    }
-
-    public int getMaxVolume() {
-        return maxVolume;
-    }
-
-    public void setMaxVolume(int maxVolume) {
-        this.maxVolume = maxVolume;
+    public void setCurrentStationNumber(int currentStationNumber) {
+        if (currentStationNumber > maxStationNumber) {
+            return;
+        }
+        if (currentStationNumber < minStationNumber) {
+            return;
+        }
+        this.currentStationNumber = currentStationNumber;
     }
 
     public void nextStation() {
@@ -69,10 +34,7 @@ public class Radio {
             this.currentStationNumber = minStationNumber;
             return;
         }
-
-        else {
-            this.currentStationNumber++;
-        }
+        this.currentStationNumber++;
     }
 
     public void prevStation() {
@@ -80,29 +42,22 @@ public class Radio {
             this.currentStationNumber = maxStationNumber;
             return;
         }
-
-        else {
-            this.currentStationNumber--;
-        }
+        this.currentStationNumber--;
     }
 
     public void volumeUp() {
         if (currentVolume == maxVolume) {
             return;
         }
+        this.currentVolume++;
 
-        else {
-            this.currentVolume++;
-        }
     }
 
     public void volumeDown() {
         if (currentVolume == minVolume) {
             return;
         }
-
-        else {
-            this.currentVolume--;
-        }
+        this.currentVolume--;
     }
 }
+
